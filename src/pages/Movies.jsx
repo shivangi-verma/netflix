@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import CardSlider from "../components/CardSlider";
+// import CardSlider from "../components/CardSlider";
 import { onAuthStateChanged } from "firebase/auth";
 import { firebaseAuth } from "../utils/firebase-config";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ function MoviePage() {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, []);
+  });
 
   useEffect(() => {
     if (genresLoaded) {
