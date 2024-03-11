@@ -21,21 +21,17 @@ function MoviePage() {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, [dispatch]); // Added dispatch to the dependency array
+  }, [dispatch]);  
 
   useEffect(() => {
     if (genresLoaded) {
       dispatch(fetchMovies({ genres, type: "movie" }));
     }
-  }, [dispatch, genres, genresLoaded]); // Added dependencies
-
-  // Commenting out unused user state
-  // const [user, setUser] = useState(undefined);
+  }, [dispatch, genres, genresLoaded]);  
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (currentUser) => {
-      if (currentUser) {
-        // setUser(currentUser.uid);
+      if (currentUser) { 
       } else {
         navigate("/login");
       }
